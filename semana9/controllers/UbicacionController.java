@@ -14,40 +14,40 @@ import java.util.stream.Collectors;
 @RequestMapping("/ubicaciones")
 public class UbicacionController {
     @Autowired
-    private IUbicacionService dS;
+    private IUbicacionService uS;
 
     @PostMapping
-    public void insert(@RequestBody UbicacionDTO dto){
-        ModelMapper m=new ModelMapper();
-        Ubicacion a=m.map(dto,Ubicacion.class);
-        dS.insert(a);
+    public void insert(@RequestBody UbicacionDTO dto) {
+
+        ModelMapper m = new ModelMapper();
+        Ubicacion u = m.map(dto, Ubicacion.class);
+        uS.insert(u);
     }
 
     @GetMapping
-    public List<UbicacionDTO> list(){
-        return dS.list().stream().map(x->{
-            ModelMapper m=new ModelMapper();
-            return m.map(x,UbicacionDTO.class);
+    public List<UbicacionDTO> list() {
+        return uS.list().stream().map(x -> {
+            ModelMapper m = new ModelMapper();
+            return m.map(x, UbicacionDTO.class);
         }).collect(Collectors.toList());
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id")Integer id){
-        dS.delete(id);
+    public void delete(@PathVariable("id") Integer id) {
+        uS.delete(id);
     }
 
     @GetMapping("/{id}")
-    public UbicacionDTO listId(@PathVariable("id")Integer id){
-        ModelMapper m=new ModelMapper();
-        UbicacionDTO dto=m.map(dS.listId(id),UbicacionDTO.class);
+    public UbicacionDTO listId(@PathVariable("id") Integer id) {
+        ModelMapper m = new ModelMapper();
+        UbicacionDTO dto = m.map(uS.listId(id), UbicacionDTO.class);
         return dto;
     }
-
     @PutMapping
-    public void goUpdate(@RequestBody UbicacionDTO dto){
+    public void goUpdate(@RequestBody UbicacionDTO dto) {
         ModelMapper m=new ModelMapper();
-        Ubicacion a=m.map(dto,Ubicacion.class);
-        dS.insert(a);
+        Ubicacion u=m.map(dto,Ubicacion.class);
+        uS.insert(u);
     }
 }
-}
+
