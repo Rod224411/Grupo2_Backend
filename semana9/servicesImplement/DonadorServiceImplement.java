@@ -32,4 +32,9 @@ public class DonadorServiceImplement implements DonadorService {
     public Donador listId(int idDonador) {
         return dR.findById(idDonador).orElse(new Donador());
     }
+
+    @Override
+    public List<Donador> find(int id) {
+        return dR.buscarDonador(id);
+    }
 }
