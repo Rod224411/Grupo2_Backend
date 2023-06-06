@@ -21,7 +21,7 @@ public class Donacion {
     private Donador donador;
 
     @ManyToOne
-    @JoinColumn(name="id")
+    @JoinColumn(name="idCaso")
     private Caso caso;
 
     public Donacion() {
