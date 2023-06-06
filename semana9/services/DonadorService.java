@@ -10,4 +10,6 @@ public interface DonadorService {
 
     public void delete(int idDonador);
     public Donador listId(int idDonador);
+    List<Donador> find(int id);
 }
+
