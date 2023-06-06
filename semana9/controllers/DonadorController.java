@@ -48,4 +48,11 @@ public class DonadorController {
         Donador d= m.map(dto, Donador.class);
         dS.insert(d);
     }
+    @PostMapping("/buscar")
+    public List<DonadorDTO> search(@RequestBody int id){
+        return dS.find(id).stream().map(x->{
+            ModelMapper m= new ModelMapper();
+            return m.map(x, DonadorDTO.class);
+        }).collect(Collectors.toList());
+    }
 }
