@@ -29,10 +29,10 @@ public class Damnificado {
     private int telefono;
 
     @Column(name = "contrasena",length = 60,nullable = false)
-    private int contrasena;
+    private String contrasena;
 
     @Column(name = "correo",length = 60,nullable = false)
-    private int correo;
+    private String correo;
 
     public int getIdDamnificado() {
         return idDamnificado;
@@ -90,19 +90,19 @@ public class Damnificado {
         this.telefono = telefono;
     }
 
-    public int getContrasena() {
+    public String getContrasena() {
         return contrasena;
     }
 
-    public void setContrasena(int contrasena) {
+    public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
 
-    public int getCorreo() {
+    public String getCorreo() {
         return correo;
     }
 
-    public void setCorreo(int correo) {
+    public void setCorreo(String correo) {
         this.correo = correo;
     }
 }
