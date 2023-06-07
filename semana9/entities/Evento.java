@@ -18,7 +18,7 @@ public class Evento {
     @Column(name = "fin", nullable = false)
     private LocalDate fin;
     @ManyToOne
-    @JoinColumn(name="dni")
+    @JoinColumn(name="idDonador")
     private Donador donador;
 
     public Evento() {
