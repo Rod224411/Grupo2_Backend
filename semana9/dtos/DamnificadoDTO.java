@@ -8,8 +8,8 @@ public class DamnificadoDTO {
     private int edad;
     private int peso;
     private int telefono;
-    private int contrasena;
-    private int correo;
+    private String contrasena;
+    private String correo;
 
     public int getIdDamnificado() {
         return idDamnificado;
@@ -67,19 +67,19 @@ public class DamnificadoDTO {
         this.telefono = telefono;
     }
 
-    public int getContrasena() {
+    public String getContrasena() {
         return contrasena;
     }
 
-    public void setContrasena(int contrasena) {
+    public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
 
-    public int getCorreo() {
+    public String getCorreo() {
         return correo;
     }
 
-    public void setCorreo(int correo) {
+    public void setCorreo(String correo) {
         this.correo = correo;
     }
 }
