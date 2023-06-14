@@ -1,11 +1,10 @@
-package pe.edu.upc.demoubicacion.controllers;
-
+package pe.edu.upc.semana9.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.demoubicacion.dtos.EventoDTO;
-import pe.edu.upc.demoubicacion.entities.Evento;
-import pe.edu.upc.demoubicacion.services.IEventoService;
+import pe.edu.upc.semana9.dtos.EventoDTO;
+import pe.edu.upc.semana9.entities.Evento;
+import pe.edu.upc.semana9.services.IEventoService;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -30,6 +29,10 @@ public class EventoController {
             ModelMapper m = new ModelMapper();
             return m.map(x, EventoDTO.class);
         }).collect(Collectors.toList());
+    }
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id")Integer id){
+        eS.delete(id);
     }
     @GetMapping("/{id}")
     public EventoDTO listId(@PathVariable("id") Integer id) {
