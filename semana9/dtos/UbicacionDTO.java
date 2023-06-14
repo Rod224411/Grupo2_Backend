@@ -1,10 +1,10 @@
 package pe.edu.upc.semana9.dtos;
+
 public class UbicacionDTO {
     private int idUbicacion;
     private String departamento;
     private String distrito;
     private String direccion;
-
 
     public int getIdUbicacion() {
         return idUbicacion;
@@ -13,6 +13,7 @@ public class UbicacionDTO {
     public void setIdUbicacion(int idUbicacion) {
         this.idUbicacion = idUbicacion;
     }
+
     public String getDepartamento() {
         return departamento;
     }
@@ -20,6 +21,7 @@ public class UbicacionDTO {
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
     }
+
     public String getDistrito() {
         return distrito;
     }
@@ -27,6 +29,7 @@ public class UbicacionDTO {
     public void setDistrito(String distrito) {
         this.distrito = distrito;
     }
+
     public String getDireccion() {
         return direccion;
     }
@@ -34,6 +37,4 @@ public class UbicacionDTO {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-
 }
-

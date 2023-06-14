@@ -1,7 +1,6 @@
-package pe.edu.upc.demoubicacion.dtos;
-
-import pe.edu.upc.demoubicacion.entities.Donador;
-
+package pe.edu.upc.semana9.dtos;
+import pe.edu.upc.semana9.entities.Donador;
+import pe.edu.upc.semana9.entities.Usuario;
 
 import java.time.LocalDate;
 
@@ -11,7 +10,7 @@ public class EventoDTO {
     private String ubicacion;
     private LocalDate inicio;
     private LocalDate fin;
-    private Donador donador;
+    private Usuario user;
 
     public int getIdEvento() {
         return idEvento;
@@ -53,11 +52,11 @@ public class EventoDTO {
         this.fin = fin;
     }
 
-    public Donador getDonador() {
-        return donador;
+    public Usuario getUser() {
+        return user;
     }
 
-    public void setDonador(Donador donador) {
-        this.donador = donador;
+    public void setUser(Usuario user) {
+        this.user = user;
     }
 }
