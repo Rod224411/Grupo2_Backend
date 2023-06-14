@@ -1,10 +1,9 @@
-package pe.edu.upc.demoubicacion.servicesimplement;
-
+package pe.edu.upc.semana9.servicesImplement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.demoubicacion.entities.Evento;
-import pe.edu.upc.demoubicacion.repositories.IEventoRepository;
-import pe.edu.upc.demoubicacion.services.IEventoService;
+import pe.edu.upc.semana9.entities.Evento;
+import pe.edu.upc.semana9.repositories.IEventoRepository;
+import pe.edu.upc.semana9.services.IEventoService;
 
 import java.util.List;
 
@@ -24,6 +23,11 @@ public class EventoServiceImplement implements IEventoService {
     public Evento listId(int idEvento){
         return eR.findById(idEvento).orElse(new Evento());
     }
+    @Override
+    public void delete(int idEvento) {
 
+        eR.deleteById(idEvento);
+
+    }
 }
 

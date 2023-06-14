@@ -10,25 +10,27 @@ import java.util.List;
 @Service
 public class UbicacionServiceImplement implements IUbicacionService {
     @Autowired
-    private IUbicacionRepository dR;
-    @Override
+    private IUbicacionRepository aR;
+
+    @Override //a sido genereado gracias a la interfas
     public void insert(Ubicacion ubicacion) {
-        dR.save(ubicacion);
+        aR.save(ubicacion);
+
     }
 
     @Override
     public List<Ubicacion> list() {
-        return dR.findAll();
+        return aR.findAll();
     }
 
     @Override
     public void delete(int idUbicacion) {
-        dR.deleteById(idUbicacion);
+        aR.deleteById(idUbicacion);
+
     }
 
     @Override
     public Ubicacion listId(int idUbicacion) {
-        return dR.findById(idUbicacion).orElse(new Ubicacion());
+        return aR.findById(idUbicacion).orElse(new Ubicacion());
     }
 }
-
