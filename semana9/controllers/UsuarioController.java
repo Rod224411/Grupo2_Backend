@@ -1,14 +1,12 @@
-package pe.edu.upc.trabajof.controllers;
+package pe.edu.upc.semana9.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.semana9.dtos.UsuarioDTO;
+import pe.edu.upc.semana9.entities.Usuario;
+import pe.edu.upc.semana9.services.IUsuarioService;
 
-import pe.edu.upc.trabajof.dtos.UbicacionDTO;
-import pe.edu.upc.trabajof.dtos.UsuarioDTO;
-import pe.edu.upc.trabajof.entities.Ubicacion;
-import pe.edu.upc.trabajof.entities.Usuario;
-import pe.edu.upc.trabajof.services.IUsuarioService;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -27,7 +25,7 @@ public class UsuarioController {
     }
 
     @GetMapping
-    public List<UsuarioDTO> list() {
+    public List <UsuarioDTO> list() {
         return uS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
             return m.map(x, UsuarioDTO.class);

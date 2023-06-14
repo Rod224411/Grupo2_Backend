@@ -50,4 +50,3 @@ public class UbicacionController {
         uS.insert(u);
     }
 }
-
