@@ -1,5 +1,4 @@
-package pe.edu.upc.demoubicacion.entities;
-
+package pe.edu.upc.semana9.entities;
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -18,8 +17,8 @@ public class Evento {
     @Column(name = "fin", nullable = false)
     private LocalDate fin;
     @ManyToOne
-    @JoinColumn(name="idDonador")
-    private Donador donador;
+    @JoinColumn(name="user_id", nullable=false)
+    private Usuario user;
 
     public Evento() {
     }
@@ -30,7 +29,7 @@ public class Evento {
         this.ubicacion = ubicacion;
         this.inicio = inicio;
         this.fin = fin;
-        this.donador = donador;
+        this.user = user;
     }
 
     public int getIdEvento() {
@@ -73,11 +72,11 @@ public class Evento {
         this.fin = fin;
     }
 
-    public Donador getDonador() {
-        return donador;
+    public Usuario getUser() {
+        return user;
     }
 
-    public void setDonador(Donador donador) {
-        this.donador = donador;
+    public void setUser(Usuario user) {
+        this.user = user;
     }
 }

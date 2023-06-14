@@ -7,12 +7,13 @@ public class Ubicacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUbicacion;
-    @Column(name = "departamento", length = 60  , nullable = false)
+    @Column(name = "departamento", length = 60, nullable = false)
     private String departamento;
-    @Column(name="distrito", length = 60, nullable = false)
+    @Column(name = "distrito",length = 40,nullable = false)
     private String distrito;
-    @Column(name="direccion", length = 100, nullable = false)
+    @Column(name = "direccion",length = 35, nullable = false)
     private String direccion;
+
     public Ubicacion() {
     }
 
@@ -46,12 +47,12 @@ public class Ubicacion {
     public void setDistrito(String distrito) {
         this.distrito = distrito;
     }
+
     public String getDireccion() {
         return direccion;
     }
 
     public void setDireccion(String direccion) {
-        this.distrito = direccion;
+        this.direccion = direccion;
     }
 }
-
